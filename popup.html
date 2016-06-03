@@ -4,20 +4,85 @@
 <meta charset="utf-8" />
 <title>Audit Helper</title>
 <style>
+  body,
+  p{
+    margin: 0;
+  }
+  button {
+    padding: 0;
+    margin: 5px 0;
+    float: left;
+    display: inline-block;
+  }
+
   #viewport {
     height: 400px;
     width: 400px;
+  }
+
+  .ratings,
+  .final-data,
+  .navigation,
+  #inputs,
+  .current{
+    display: block;
+    padding: 10px;
+  }
+
+  #previous,
+  #next{
+    width: 50%;
+  }
+
+  #okay,
+  #bad,
+  #grey{
+    width: 33.333333%;
+  }
+
+  #finish{
+    width: 100%;
+  }
+  .finished-data{
+    display: none;
+  }
+
+  .header{
+    background-color: #1D105D;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    padding: 5px;
   }
 </style>
 </head>
 
 <body>
+  <div class="header">
+    AUDIT HELPER
+  </div>
+  <div class="current">
+    <p>
+      Current: <span id="current"></span>
+    </p>
+  </div>
   <div id="inputs" class="clearfix">
     <textarea id="files" name="files[]" multiple /></textarea>
   </div>
   <hr />
+  <div class="navigation">
     <button id="previous">Previous</button>
     <button id="next">Next</button>
+  </div>
+  <div class='ratings'>
+    <button id="okay">Okay</button>
+    <button id="bad">Bad</button>
+    <button id="grey">Grey</button>
+  </div>
+  <div class="final-data">
+    <button id="finish">Finish</button>
+    <textarea id="finishedData" class="finished-data" /></textarea>
   </div>
   <script src="jquery-2.2.4.min.js"></script>
   <script src="jquery.csv.min.js"></script>
